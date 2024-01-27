@@ -1,33 +1,37 @@
-import React from 'react'
-import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Image } from '@chakra-ui/react'
+import { useParams } from 'react-router-dom'
+import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Flex, Image } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 
-const Item = ({ producto }) => {
+const Item = ({ item }) => {
+
+
 
     return (
+        <Flex align="center" justify="center" >
         <Card maxW='sm'>
-            <CardBody>
+            <CardBody >
                 <Image
-                    src={producto.img}
+                    src={`${item.imagen}`}
                     borderRadius='lg'
                 />
                 <Stack mt='6' spacing='3'>
-                    <Heading size='md'>{producto.titulo}</Heading>
+                    <Heading size='md'>{`${item.titulo}`}</Heading>
                     <Text>
-                        {producto.descripcion}
+                        {item.descripcion}
                     </Text>
                     <Text color='blue.600' fontSize='2xl'>
-                        ${producto.precio}
+                        ${item.precio}
                     </Text>
                 </Stack>
             </CardBody>
             <Divider />
             <CardFooter>
                 <ButtonGroup spacing='2'>
-                    <ItemCount />
+                    <ItemCount item= {item}/>
                 </ButtonGroup>
             </CardFooter>
         </Card>
+        </Flex>
     )
 }
 

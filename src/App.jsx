@@ -3,27 +3,32 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart"
-
+import Form from "./components/Form"
+import { CartProvider } from "./components/context/CartContext"
 
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
 
-      <Navbar />
+        <Navbar />
 
-      <Routes>
+        <Routes>
 
-        <Route path='/' element={<ItemListContainer/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route exact path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
-        <Route exact path='/producto/:id' element={<ItemDetailContainer/>}/>
-
-      </Routes>
-      {/* <ItemListContainer /> */}
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route exact path='/categoria/:categoriaId' element={<ItemListContainer />} />
+          <Route exact path='/producto/:id' element={<ItemDetailContainer />} />
+          <Route exact path='/pedido/form' element={<Form />} />
 
 
-    </BrowserRouter>
+        </Routes>
+        {/* <ItemListContainer /> */}
+
+      </BrowserRouter>
+    </CartProvider>
+
 
   )
 }

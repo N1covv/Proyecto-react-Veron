@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+}
+.compl{
+    padding-top: 3rem;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-top: 2rem;
+    padding-left: 3rem;
+    gap: 1rem;
+}
+
+.formulario input{
+    padding: .7rem;
+    width: 18rem;
+    border-radius: .3rem;
+    border: 2px solid rgb(93, 84, 215);
+}
+
+.formulario button{
+    padding: .7rem;
+    width: 10rem;
+    background-color: rgb(93, 84, 215);
+    border-radius: .5rem;
+    color: white;
+}
+
+.titulocart{
+    font-size: 1.5rem;
+}
+
+.final{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 2rem;
+    padding-top: 1rem;
+}
+.total{
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.vaciar{
+    background-color: rgb(201, 201, 201);
+    padding: 4px;
+    border-radius: .2rem;
+}
